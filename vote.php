@@ -56,9 +56,11 @@ html {
 
 </style>
 
+<body>
+
 <div class="content poll-vote">
 	<h2><?=$poll['title']?></h2>
-	<p><?=$poll['desc']?></p>
+	<p><?=$poll['question']?></p>
     <form action="vote.php?id=<?=$_GET['id']?>" method="post">
         <?php for ($i = 0; $i < count($poll_answers); $i++): ?>
         <label>
@@ -72,3 +74,31 @@ html {
         </div>
     </form>
 </div>
+
+<style>
+
+.center {
+  text-align: center;
+  color: blue;
+  font-size: 40px;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: blue;
+   color: white;
+   text-align: center;
+}
+
+</style>
+
+<div class="footer">
+<p>Tervetuloa!</p>
+<p>By Raimo Jämsén Data2019C</p>
+</div>
+
+</body>
+</html>

@@ -1,23 +1,23 @@
  <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "phppoll";
-
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
- 
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  $sql = "DELETE FROM polls WHERE id>=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38";
-
-  $conn->exec($sql);
-  echo "Record deleted successfully!";
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
+if (!isset($_GET['id'])){
+  die('Ei voi poistaa');
 }
-
-$conn = null;
+ $id = $_GET['id'];
 
 include 'votepoll.php';
+?> 
+
+<div class="content delete">
+	<h2>Delete Poll #<?=$poll['id']?></h2>
+    
+	<p>Are you sure you want to delete poll #<?php echo $id; ?>?</p>
+    <div class="yesno">
+        <a href="delete.php?id=<?php echo $id ?>&confirm=yes">Yes</a>
+        <a href="delete.php?id=<?php echo $id ?>&confirm=no">No</a>
+    </div>
+
+</div>
+
+<?php
+  echo 'You\'ll be redirected in about 15 secs. If not, click <a href="votepoll.php">here</a>.';
 ?> 

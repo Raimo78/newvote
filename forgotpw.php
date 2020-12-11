@@ -22,6 +22,7 @@ if(isset($_POST['submit']))
 				}
 }
 ?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -30,12 +31,12 @@ if(isset($_POST['submit']))
 
 <style type="text/css">
 
- input{
+ input {
  border:1px solid olive;
  border-radius:5px;
  }
 
- h1{
+ h1  {
   color:darkgreen;
   font-size:22px;
   text-align:center;
@@ -44,6 +45,7 @@ if(isset($_POST['submit']))
 </style>
 
 </head>
+
 <body>
 
 <style>
@@ -53,6 +55,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
 html {
     height: 100%
 }

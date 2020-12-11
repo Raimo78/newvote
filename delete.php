@@ -24,11 +24,35 @@ if (isset($_GET['id'])) {
             $msg = 'You have deleted the poll!';
         } else {
             
-            header('Location: votepoll.php');
+            header('Location: /votetepoll.php');
             exit;
         }
     }
 } else {
     die ('No ID specified!');
 }
+
+?>
+
+<script> location.replace("votepoll.php"); </script>
+
+<div class="content delete">
+	<h2>Delete Poll #<?=$poll['id']?></h2>
+    <?php if ($msg): ?>
+    <p><?=$msg?></p>
+    <?php else: ?>
+	<p>Are you sure you want to delete poll #<?=$poll['id']?>?</p>
+    <div class="yesno">
+        <a href="delete.php?id=<?=$poll['id']?>&confirm=yes">Yes</a>
+        <a href="delete.php?id=<?=$poll['id']?>&confirm=no">No</a>
+    </div>
+
+<?php endif; ?>
+
+</div>
+
+<?php 
+
+   $refreshvalue = 12; echo '<meta http-equiv="refresh" content="' . $refreshvalue . '; url=\'mypollvote.php\'"/>';
+
 ?>

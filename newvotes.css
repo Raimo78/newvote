@@ -5,7 +5,7 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
 }
-body {
+.body {
       background-image: url("banner.webp");
       background-repeat: repeat;
       background-color: #FFFFFF;

@@ -47,6 +47,7 @@ function closeSidebar() {
 			<a href="register.php"><i class="fas fa-user"></i>Register</a>
 			<a href="login.php"><i class="fas fa-user"></i>Login</a>
       <a href="logout.php"><i class="fas fa-user"></i>Logout</a>
+      <a href="dashboard.php"><i class="fas fa-user"></i>Dashboard</a>
     	</div>
 
     </nav>
@@ -131,6 +132,7 @@ form {
 
 <div class="footer">
   <p>By Raimo Jämsén Data2019C</p>
+  <iframe src="audiovote/login.mp3" allow="autoplay" id="audio/mp3"></iframe>
 </div>
 
 </body>

@@ -134,7 +134,7 @@ svg{width:25%;}
 
 <div class="content poll-result">
 	<h2><?=$poll['title']?></h2>
-	<p><?=$poll['desc']?></p>
+	<p><?=$poll['question']?></p>
     <div class="wrapper">
         <?php foreach ($poll_answers as $poll_answer): ?>
         <div class="poll-question">
@@ -148,6 +148,7 @@ svg{width:25%;}
 </div>
 
 <style>
+
 .footer {
    position: left;
    left: 0;
@@ -157,15 +158,17 @@ svg{width:25%;}
    color: white;
    text-align: center;
 }
+
 </style>
 
 <div class="footer">
+  <iframe src="audiovote/results.mp3" allow="autoplay" id="audio/mp3"></iframe>
   <p>By Raimo Jämsén Data2019C</p>
 </div>
 
 <?php
 
-$refreshvalue = 12;
+$refreshvalue = 20;
 echo '<meta http-equiv="refresh" content="' . $refreshvalue . '; url=\'mypollvote.php\'"/>';
 
 ?>

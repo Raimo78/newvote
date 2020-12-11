@@ -6,7 +6,7 @@ $msg = '';
 if (!empty($_POST)) {
     
     $title = isset($_POST['title']) ? $_POST['title'] : '';
-    $desc = isset($_POST['desc']) ? $_POST['desc'] : '';
+    $desc = isset($_POST['question']) ? $_POST['question'] : '';
    
     $stmt = $pdo->prepare('INSERT INTO polls VALUES (NULL, ?, ?)');
     $stmt->execute([$title, $desc]);
@@ -53,8 +53,8 @@ html {
     <form action="create.php" method="post">
         <label for="title">Otsikko</label>
         <input type="text" name="title" id="title">
-        <label for="desc">Kysymys</label>
-        <input type="text" name="desc" id="desc">
+        <label for="question">Kysymys</label>
+        <input type="text" name="question" id="question">
         <label for="answers">Vastaukset (riviä kohden)</label>
         <textarea name="answers" id="answers"></textarea>
         <input type="submit" value="Luo kysymyksesi">
@@ -65,6 +65,6 @@ html {
 </div>
 
 <?php
-  header( "refresh:45;url=votepoll.php" );
-  echo 'You\'ll be redirected in about 45 secs. If not, click <a href="votepoll.php">here</a>.';
+  header( "refresh:70;url=votepoll.php" );
+  echo 'You\'ll be redirected in about 70 secs. If not, click <a href="votepoll.php">here</a>.';
 ?> 
