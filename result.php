@@ -1,6 +1,6 @@
 <?php
 include 'functions.php';
-
+header('Content-type: text/html; charset=utf-8');
 $pdo = pdo_connect_mysql();
 
 if (isset($_GET['id'])) {
@@ -140,12 +140,20 @@ svg{width:25%;}
         <div class="poll-question">
             <p><?=$poll_answer['title']?> <span>(<?=$poll_answer['votes']?> Votes)</span></p>
             <div class="result-bar" style= "width:<?=@round(($poll_answer['votes']/$total_votes)*100)?>%">
-                <?=@round(($poll_answer['votes']/$total_votes)*100)?>%
-            </div>
+         <?=@round(($poll_answer['votes']/$total_votes)*100)?>%
+       </div>
         </div>
         <?php endforeach; ?>
     </div>
 </div>
+
+<?php
+
+$query = "SELECT SUM(`poll_answers`) AS `ORDER BY` FROM `poll_answers`"; 
+
+echo "Total $total_votes" . number_format($row['total_votes'], 2, ',')."<br>";
+
+?>
 
 <style>
 
@@ -168,7 +176,7 @@ svg{width:25%;}
 
 <?php
 
-$refreshvalue = 20;
+$refreshvalue = 30;
 echo '<meta http-equiv="refresh" content="' . $refreshvalue . '; url=\'mypollvote.php\'"/>';
 
 ?>

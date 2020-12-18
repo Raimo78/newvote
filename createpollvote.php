@@ -43,7 +43,7 @@ h2.headertekst {
     <img src="poll.webp" alt="poll" width="70" height="70">
     <h3>Ohjeet:</h3>
 	<p>Tervetuloa hakemistosivulle, voit tarkastella alla olevaa luetteloa kyselyistä. Voit äänestää kysymyksiä, voit myös luoda uusia kymyksiä ja lisäksi voit poistaa kysymyksiä.</p>
-	<a href="create.php" class="create-poll">Luo uusi kysymys</a>
+	<a href="freecreatepolls.php" class="create-poll">Luo uusi kysymys</a>
 	<table>
         <thead>
             <tr>
@@ -62,9 +62,6 @@ h2.headertekst {
                 <td class="actions">
 					<a href="vote.php?id=<?=$poll['id']?>" class="view" title="View Poll"><i class="fa fa-pencil fa-fw"></i> View Poll</a>
                     <i class="fa fa-cog fa-spin fa-3x fa-fw"></i><span class="sr-only">Loading...</span>
-                    <a href="deletepoll.php?id=<?=$poll['id']?>" class="trash" title="Delete Poll"><i class="fa fa-trash-o fa-lg"></i> Delete</a>
-                    <a href="all_records.php?id=<?=$poll['id']?>" class="view" title="Edit Poll"><i class="fa fa-pencil fa-fw"></i> Edit</a>
-                </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
